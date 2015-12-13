@@ -6,14 +6,14 @@ uses
 var
   c: array of char;
   a, b: string;
-  lol, i, test: integer;
+  k, i, test: integer;
 
 procedure sum(x, y: string; var c: array of char);
 
 var
   i, k: integer;
 begin
-  for i := lol downto 1 do
+  for i := k downto 1 do
   begin
      //writeln(i);
     // writeln(c[i]);
@@ -22,7 +22,7 @@ begin
     c[i - 1] := char(((ord(c[i]) - 48) div 10) + 48);
     c[i] := char(((ord(c[i]) - 48) mod 10) + 48);
   end;
-  for i := lol downto lol - y.Length + 1 do
+  for i := k downto k - y.Length + 1 do
   begin
     c[i] := char(ord(c[i]) + ord(y[i - lol + y.Length]) - 48);
     c[i - 1] := char(ord(c[i - 1]) + ((ord(c[i]) - 48) div 10));
