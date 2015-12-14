@@ -1,4 +1,4 @@
-program task1;
+program A1;
 
 uses
   crt;
