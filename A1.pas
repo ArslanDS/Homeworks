@@ -47,7 +47,7 @@ begin
   end
   else 
   begin
-    lol := b.Length;
+    k := b.Length;
     setlength(c, lol + 1);
     for i := 0 to lol do
       c[i] := '0';
