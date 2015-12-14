@@ -48,8 +48,8 @@ begin
   else 
   begin
     k := b.Length;
-    setlength(c, lol + 1);
-    for i := 0 to lol do
+    setlength(c, k + 1);
+    for i := 0 to k do
       c[i] := '0';
     sum(b, a, c); 
   end;
