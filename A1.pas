@@ -1,57 +1,35 @@
-program A1;
-
-uses
-  crt;
-
-var
-  c: array of char;
-  a, b: string;
-  k, i, test: integer;
-
-procedure sum(x, y: string; var c: array of char);
-
-var
-  i, k: integer;
+program a1;
+uses crt;
+var a,b:string;
+i,j,k,m:integer; c,d,x:array[1..10000] of integer;
 begin
-  for i := k downto 1 do
-  begin
-     //writeln(i);
-    // writeln(c[i]);
-    // writeln(x[i]);
-    c[i] := char(ord(c[i]) + ord(x[i]) - 48);
-    c[i - 1] := char(((ord(c[i]) - 48) div 10) + 48);
-    c[i] := char(((ord(c[i]) - 48) mod 10) + 48);
-  end;
-  for i := k downto k - y.Length + 1 do
-  begin
-    c[i] := char(ord(c[i]) + ord(y[i - k + y.Length]) - 48);
-    c[i - 1] := char(ord(c[i - 1]) + ((ord(c[i]) - 48) div 10));
-    c[i] := char(((ord(c[i]) - 48) mod 10) + 48);
-  end;
-  if test > 9 then k := 0 else k := 1;
-  for i := k to k do
-    write(c[i]);  
+clrscr;
+readln(a);
+readln(b);
+j:=length(a);
+for i:=1 to length(a) do
+begin
+val(a[i],c[j],m); j:=j-1;
 end;
-
+j:=length(b);
+for i:=1 to length(b) do
 begin
-  readln(a);
-  readln(b);
-  test := ord(a[1]) + ord(b[1]) - 96;
-  if a.Length > b.length then
-  begin
-    k := a.Length;
-    setlength(c, k + 1);
-    for i := 0 to k do
-      c[i] := '0';
-    sum(a, b, c);
-  end
-  else 
-  begin
-    k := b.Length;
-    setlength(c, k + 1);
-    for i := 0 to k do
-      c[i] := '0';
-    sum(b, a, c); 
-  end;
-  
+val(b[i],d[j],m); j:=j-1;
+end;
+if length(a)<length(b) then k:=length(b) else k:=length(a);
+k:=k+1;
+for i:=1 to k do
+x[i]:=0;
+for i:=1 to k do
+begin
+x[i]:=c[i]+d[i]+x[i];
+if x[i]>=10 then
+begin
+x[i+1]:=x[i+1]+1;
+x[i]:=x[i] mod 10;
+end;
+end;
+if x[k]=0 then k:=k-1;
+for i:=k downto 1 do write(x[i]);
+readkey;
 end.
