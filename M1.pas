@@ -1,4 +1,4 @@
-program Ekz4;
+program M1;
 
 const
   n = 4;
