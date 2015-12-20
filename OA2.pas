@@ -15,8 +15,8 @@ begin
       begin
         s := true;
         break;
-     end
-     else
+      end
+      else
         begin
           j := j + 1;
         end;
